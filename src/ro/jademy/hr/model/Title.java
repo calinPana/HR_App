@@ -10,32 +10,26 @@ public class Title {
     public static final String TITLE_FROM_DATE = "from_date";
     public static final String TITLE_TO_DATE = "to_date";
 
-    public String empNo;
-    public String Title;
-    public Date fromDate;
-    public Date toDate;
+    private String title;
+    private Date fromDate;
+    private Date toDate;
 
-    public Title(String empNo, String title, Date fromDate, Date toDate) {
-        this.empNo = empNo;
-        Title = title;
+    public Title(String title) {
+        this.title = title;
+    }
+
+    public Title(String title, Date fromDate, Date toDate) {
+        this.title = title;
         this.fromDate = fromDate;
         this.toDate = toDate;
     }
 
-    public String getEmpNo() {
-        return empNo;
-    }
-
-    public void setEmpNo(String empNo) {
-        this.empNo = empNo;
-    }
-
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public Date getFromDate() {

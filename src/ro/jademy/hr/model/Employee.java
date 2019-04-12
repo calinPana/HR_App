@@ -14,14 +14,16 @@ public class Employee {
     public static final String EMP_GENDER = "gender";
     public static final String EMP_HIRE_DATE = "hireDate";
 
-
     private String empNo;
     private Date birthDate;
     private String firstName;
     private String lastName;
     private String gender;
     private Date hireDate;
-    private List<Integer> salaries = new ArrayList<>();
+
+    private List<Salary> salaries;
+    private List<Department> departments;
+    private List<Title> titles;
 
     public Employee(String empNo, Date birth_date, String firstName, String lastName, String gender, Date hireDate) {
         this.empNo = empNo;
@@ -30,9 +32,10 @@ public class Employee {
         this.lastName = lastName;
         this.gender = gender;
         this.hireDate = hireDate;
+        this.salaries = new ArrayList<>();
+        this.departments = new ArrayList<>();
+        this.titles = new ArrayList<>();
     }
-
-
 
     public String getEmpNo() {
         return empNo;
@@ -82,11 +85,30 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    public List<Integer> getSalaries() {
+    public List<Salary> getSalaries() {
         return salaries;
     }
 
-    public void setSalaries(List<Integer> salaries) {
-        this.salaries = salaries;
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
+    public List<Title> getTitles() {
+        return titles;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empNo='" + empNo + '\'' +
+                ", birthDate=" + birthDate +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", hireDate=" + hireDate +
+                ", salaries=" + salaries +
+                ", departments=" + departments +
+                ", titles=" + titles +
+                '}';
     }
 }
