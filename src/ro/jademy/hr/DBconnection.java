@@ -60,7 +60,7 @@ public class DBconnection {
         String salariesQuery = "SELECT * FROM departments WHERE emp_no = " + employee.getEmpNo();
         ResultSet rs = runQuery(salariesQuery, conn);
         while (rs.next()) {
-            Department department = new Department(rs.getString(1), rs.getInt(2), rs.getDate(3),
+            Department department = new Department(rs.getString(1), rs.getString(2), rs.getDate(3),
                     rs.getDate(4));
             departments.add(department);
         }
@@ -68,6 +68,6 @@ public class DBconnection {
 
         // query to return salaries for a given employee
 
-        return salaries;
+        return departments;
     }
 }

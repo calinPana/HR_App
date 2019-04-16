@@ -20,6 +20,8 @@ public class Employee {
     private String lastName;
     private String gender;
     private Date hireDate;
+    private String phoneNumber;
+    private String email;
 
     private List<Salary> salaries;
     private List<Department> departments;
@@ -36,6 +38,7 @@ public class Employee {
         this.departments = new ArrayList<>();
         this.titles = new ArrayList<>();
     }
+
 
     public String getEmpNo() {
         return empNo;
@@ -95,6 +98,24 @@ public class Employee {
 
     public List<Title> getTitles() {
         return titles;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        if (phoneNumber.matches("^(07){1}([2-8]){1}([\\d]{7})")&&phoneNumber.length()==10)
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        if (email.matches("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"))
+        this.email = email;
     }
 
     @Override
